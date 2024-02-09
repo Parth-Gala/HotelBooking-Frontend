@@ -20,6 +20,8 @@ import { FaHouse } from "react-icons/fa6";
 import CModal from "../components/CModal.js";
 import subscribe from "../assets/subscribe.png";
 import { Link } from "react-router-dom";
+import emailjs from "emailjs-com";
+
 const slides = [
   "https://cdn.discordapp.com/attachments/1088179483858710569/1192567171033870386/Manali.jpg?ex=65a98bba&is=659716ba&hm=11c71a722d5bf923527292eb38830aed3297efd87abae2a41fce2f2adb169195&",
   "https://cdn.discordapp.com/attachments/1088179483858710569/1192567110908510248/Darjeeling.jpg?ex=65a98bac&is=659716ac&hm=962e505fe1ea9044c2756ada272800f5658118ac44b26fd953e0e26ff70f5387&",
@@ -43,10 +45,12 @@ const Home = () => {
   }, []);
 
   const { user } = useContext(AuthContext);
-  useEffect(() => {
-    // console.log("User updated ", user);
-  }, [user]);
-
+  // useEffect(() => {
+  //   console.log("User updated ", user.username || "No user");
+  //   console.log("newuser ", user);
+  // }, []);
+  const [name] = useState(user.username || "Guest");
+  // console.log("name", name);
   const [email, setEmail] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleEmailChange = (e) => {
@@ -54,11 +58,30 @@ const Home = () => {
   };
 
   const handleSubscribe = () => {
-    setIsModalOpen(true);
 
-    setTimeout(() => {
-      closeModal();
-    }, 2000);
+    if(email === ""){
+      alert("Please enter your email");
+      return;
+    }
+    else{
+        const templateParams = {
+          to_email: email,
+          to_name: name,
+        };
+
+        emailjs.send('service_4yk6jx8', 'template_5x3pwbs', templateParams, 'EFlrEqzoXUFkYLJOB')
+        .then((response) => {
+          console.log('Email sent:', response);
+          setIsModalOpen(true);
+          
+          setTimeout(() => {
+            closeModal();
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error('Error sending email:', error);
+        });
+      };
   };
 
   const closeModal = () => {
@@ -320,7 +343,7 @@ const Home = () => {
       {isModalOpen && (
         <CModal
           title="Congratulations!!!"
-          desc="Great rewards on your way"
+          desc="Great offers & rewards on your way"
           image={subscribe}
           isOpen={setIsModalOpen}
           onClose={closeModal}

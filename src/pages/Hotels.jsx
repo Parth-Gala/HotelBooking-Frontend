@@ -89,7 +89,7 @@ const Hotels = () => {
     return input.charAt(0).toUpperCase() + input.slice(1);
   };
 
-  const [availableDestinations, setAvailableDestinations] = useState([
+  const [availableDestinations] = useState([
     "Mumbai",
     "Delhi",
     "Kashmir",
@@ -105,10 +105,11 @@ const Hotels = () => {
     if (!availableDestinations.includes(enteredDestination)) {
       return (
         <div className=" text-center">
-          <div>OOPS!!! Sorry Dear</div>
-        <p className=" m-2 text-red-500 mt-2">
-          We Only have Best Stays in {availableDestinations.join(", ")}.
+          <div className=" text-red-600">OOPS!!! So Sorry Dear</div>
+        <p className=" m-2 mt-2">
+          We are only opertional in {availableDestinations.join(", ")}.
         </p>
+          Try searching for one of these destinations.
         </div>
       );
     }
@@ -697,6 +698,7 @@ const Hotels = () => {
                 ))}
               </>
             )}
+          {showAvailabilityMessage()}
           </div>
         </>
       )}
