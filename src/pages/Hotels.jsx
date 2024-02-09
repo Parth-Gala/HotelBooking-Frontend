@@ -89,6 +89,32 @@ const Hotels = () => {
     return input.charAt(0).toUpperCase() + input.slice(1);
   };
 
+  const [availableDestinations, setAvailableDestinations] = useState([
+    "Mumbai",
+    "Delhi",
+    "Kashmir",
+    "Kerala",
+    "Sikkim",
+    "Gujarat",
+    "Manali",
+    "Darjeeling",
+  ]);
+
+  const showAvailabilityMessage = () => {
+    const enteredDestination = destination.toLowerCase();
+    if (!availableDestinations.includes(enteredDestination)) {
+      return (
+        <div className=" text-center">
+          <div>OOPS!!! Sorry Dear</div>
+        <p className=" m-2 text-red-500 mt-2">
+          We Only have Best Stays in {availableDestinations.join(", ")}.
+        </p>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <div className=" flex justify-center overflow-y-auto ">
       {isWidth ? (
@@ -390,6 +416,7 @@ const Hotels = () => {
                 </>
               )}
             </div>
+            {showAvailabilityMessage()}
           </div>
         </>
       ) : (

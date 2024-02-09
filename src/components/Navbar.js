@@ -36,12 +36,12 @@ const Navbar = () => {
 
   return (
     <div className="w-full h-24 mx-auto  my-0 sticky top-0 z-50 bg-bodyColor flex justify-between items-center font-titleFont">
-      <div className="flex flex-row justify-center gap-4 items-center ">
+      <div className="flex flex-row justify-center items-center ">
         <Link to="/" className=" inline">
           <img src={logo} alt="logo" className=" w-20 h-20" />
         </Link>
         <Link to="/" className=" inline">
-          <p className=" mdl:text-4xl text-designColor text-2xl">
+          <p className=" mdl:text-4xl text-designColor text-lg">
             Panda Bagpackers
           </p>
         </Link>
@@ -207,11 +207,11 @@ const Navbar = () => {
             )}
           </div>
         ) : (
-          <ul className=" flex gap-5 mr-3">
+          <ul className=" flex md:gap-5 gap-2 mr-3">
             <li className=" bg-blue-300 rounded-2xl p-2 text-base font-normal text-gray-700 tracking-wide cursor-pointer hover:text-black hover:border-black hover:border-[1px] duration-200">
-              <CustomLink to="/register">Register</CustomLink>
+              <Link to="/register">Register</Link>
             </li>
-            <li className="border-[1px] border-designColor rounded-2xl p-2 text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor hover:border-black hover:border-[1px] duration-300">
+            <li className="border-[1px]  border-designColor rounded-2xl p-2 text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor hover:border-black hover:border-[1px] duration-300">
               <CustomLink to="/login">Login</CustomLink>
             </li>
           </ul>
