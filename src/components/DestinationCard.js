@@ -1,9 +1,9 @@
 import React from "react";
 import useFetch from "../hooks/useFetch";
-const {BASE_URL} = process.env;
+
 const DestinationCard = () => {
   const { data, loading } = useFetch(
-    `${BASE_URL}/hotels/countByCity?cities=Delhi,Kerala,Sikkim,Gujarat,Manali,Darjeeling,Mumbai,Kashmir`
+    `${REACT_APP_BASE_URL}/api/hotels/countByCity?cities=Delhi,Kerala,Sikkim,Gujarat,Manali,Darjeeling,Mumbai,Kashmir`
   );
 
   const destinationimages = [

@@ -7,10 +7,10 @@ import { IoStar } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import './ScrollBar.css';
-const {BASE_URL} = process.env;
+
 const ProjectCard = () => {
   const { data, loading } = useFetch(
-    `${BASE_URL}/hotels?min=1000&max=10000&featured=true&limit=4`
+    `${REACT_APP_BASE_URL}/api/hotels?min=1000&max=10000&featured=true&limit=4`
   );
 
   return (

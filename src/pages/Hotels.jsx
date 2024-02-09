@@ -78,7 +78,7 @@ const Hotels = () => {
   }, []);
 
   const { data, loading, reFetch } = useFetch(
-    `/hotels?city=${destination || 'Mumbai'}&min=${min || 500}&max=${max || 30000}`
+    `${REACT_APP_BASE_URL}/api/hotels?city=${destination || 'Mumbai'}&min=${min || 500}&max=${max || 30000}`
   );
   const handleClick = () => {
     setShowOptions(false);

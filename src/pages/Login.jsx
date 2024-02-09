@@ -8,7 +8,6 @@ import CModal from "../components/CModal";
 import wrongdetails from "../assets/wrongdetails.png";
 import correct from "../assets/correct.png"
 
-const { BASE_URL} = process.env;
 const Login = () => {
   const [credentials, setCredentials] = useState({
     username: undefined,
@@ -26,7 +25,7 @@ const Login = () => {
   };
 
   const googlelogin = () =>{
-    window.open("http://localhost:3000/api/auth/google/callback","_self")
+    window.open(`${REACT_APP_BASE_URL}/api/auth/google/callback`,"_self")
   }
   const handleClick = async (e) => {
     e.preventDefault();
@@ -34,7 +33,8 @@ const Login = () => {
     
   
     try {
-      const res = await axios.post(`${BASE_URL}/auth/login`, credentials);
+      const res = await axios.post(`${REACT_APP_BASE_URL}/api/auth/login`, credentials);
+      console.log(res);
       setIsModalOpen(true)
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       setTimeout(() => {

@@ -12,7 +12,7 @@ const Explore = () => {
     const price_sort = true; 
 
     try {
-      const response = await axios.post('/hotel-recommendation', {
+      const response = await axios.post(`${REACT_APP_BASE_URL}/hotel-recommendation`, {
         budget_range,
         num_days,
         city_name,
