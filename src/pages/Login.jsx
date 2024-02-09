@@ -25,7 +25,7 @@ const Login = () => {
   };
 
   const googlelogin = () =>{
-    window.open(`${REACT_APP_BASE_URL}/api/auth/google/callback`,"_self")
+    window.open(`https://hotelbooking-backend-0fma.onrender.com/api/auth/google/callback`,"_self")
   }
   const handleClick = async (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const Login = () => {
     
   
     try {
-      const res = await axios.post(`${REACT_APP_BASE_URL}/api/auth/login`, credentials);
+      const res = await axios.post(`https://hotelbooking-backend-0fma.onrender.com/api/auth/login`, credentials);
       console.log(res);
       setIsModalOpen(true)
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });

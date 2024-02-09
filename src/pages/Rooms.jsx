@@ -16,7 +16,7 @@ const Rooms = () => {
 
   const location = useLocation();
   const id = location.pathname ? location.pathname.split("/")[3] : null;
-  const { data, isLoading } = useFetch(`${REACT_APP_BASE_URL}/api/hotels/find/${id}`);
+  const { data, isLoading } = useFetch(`https://hotelbooking-backend-0fma.onrender.com/api/hotels/find/${id}`);
   const [ openModal, setOpenModal ] = useState(false);
   // const [ congratsModal, setCongratsModal ] = useState(false);
   const { user } = useContext(AuthContext);

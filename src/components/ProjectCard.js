@@ -10,7 +10,7 @@ import './ScrollBar.css';
 
 const ProjectCard = () => {
   const { data, loading } = useFetch(
-    `${REACT_APP_BASE_URL}/api/hotels?min=1000&max=10000&featured=true&limit=4`
+    `https://hotelbooking-backend-0fma.onrender.com/api/hotels?min=1000&max=10000&featured=true&limit=4`
   );
 
   return (

@@ -3,7 +3,7 @@ import useFetch from "../hooks/useFetch";
 
 const DestinationCard = () => {
   const { data, loading } = useFetch(
-    `${REACT_APP_BASE_URL}/api/hotels/countByCity?cities=Delhi,Kerala,Sikkim,Gujarat,Manali,Darjeeling,Mumbai,Kashmir`
+    `https://hotelbooking-backend-0fma.onrender.com/api/hotels/countByCity?cities=Delhi,Kerala,Sikkim,Gujarat,Manali,Darjeeling,Mumbai,Kashmir`
   );
 
   const destinationimages = [

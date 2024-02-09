@@ -3,7 +3,7 @@ import useFetch from "../hooks/useFetch";
 import "./ScrollBar.css";
 
 const HotelCard = () => {
-  const { data, loading } = useFetch(`${REACT_APP_BASE_URL}/api/hotels/countByType`);
+  const { data, loading } = useFetch(`https://hotelbooking-backend-0fma.onrender.com/api/hotels/countByType`);
 
   const images = [
     "https://www.ahstatic.com/photos/6926_ho_00_p_1024x768.jpg",

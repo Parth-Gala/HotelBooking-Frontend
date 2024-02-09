@@ -9,7 +9,7 @@ const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
 
   const { setCongratsModalOpen } = useModalContext();
-  const { data } = useFetch(`${REACT_APP_BASE_URL}/api/hotels/room/${hotelId}`);
+  const { data } = useFetch(`https://hotelbooking-backend-0fma.onrender.com/api/hotels/room/${hotelId}`);
   const { date } = useContext(SearchContext);
   // const [isModalOpen, setIsModalOpen] = useState(false);
   const getDatesInRange = (startDate, endDate) => {
@@ -62,7 +62,7 @@ const Reserve = ({ setOpen, hotelId }) => {
       // console.log(alldates);
       await Promise.all(
         selectedRooms.map((roomId) => {
-          const res = axios.put(`${REACT_APP_BASE_URL}/api/rooms/availability/${roomId}`, {
+          const res = axios.put(`https://hotelbooking-backend-0fma.onrender.com/api/rooms/availability/${roomId}`, {
             dates: alldates,
           });
           return res.data;

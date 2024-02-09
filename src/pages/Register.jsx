@@ -29,7 +29,7 @@ const Register = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post(`${REACT_APP_BASE_URL}/api/auth/register`, credentials);
+      const res = await axios.post(`https://hotelbooking-backend-0fma.onrender.com/api/auth/register`, credentials);
       setIsModalOpen(true)
       Cookies.set("username", credentials.username);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
