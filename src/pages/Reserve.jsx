@@ -4,7 +4,8 @@ import useFetch from "../hooks/useFetch";
 import { SearchContext } from "../context/SearchContext";
 import axios from "axios";
 import { useModalContext } from "../context/ModalContext";
-const {BASE_URL} = process.env;
+
+
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
 
