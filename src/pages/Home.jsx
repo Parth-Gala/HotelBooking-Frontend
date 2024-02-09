@@ -49,7 +49,7 @@ const Home = () => {
   //   console.log("User updated ", user.username || "No user");
   //   console.log("newuser ", user);
   // }, []);
-  const [name] = useState(user.username || "Guest");
+  const [name] = useState(user && user.username ? user.username : "Guest");
   // console.log("name", name);
   const [email, setEmail] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -102,6 +102,7 @@ const Home = () => {
                     src={slide}
                     alt="Carousel images"
                     style={{ objectFit: "cover", height: "50%" }}
+                    key={slide}
                   />
                 ))}
               </Carousel>
@@ -224,20 +225,20 @@ const Home = () => {
         </div>
       </div>
 
-      <footer class=" bg-gray-200 ">
-        <div class=" w-full py-6 lg:py-8 p-3">
-          <div class="md:flex md:justify-between">
+      <footer className=" bg-gray-200 ">
+        <div className=" w-full py-6 lg:py-8 p-3">
+          <div className="md:flex md:justify-between">
             <div className="w-full md:w-1/4 mr-20">
-              <div class="mb-6 md:mb-10">
-                <Link to="/" class="flex items-center">
-                  <img src={logo} class="h-10 me-3" alt="FlowBite Logo" />
-                  <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-800">
+              <div className="mb-6 md:mb-10">
+                <Link to="/" className="flex items-center">
+                  <img src={logo} className="h-10 me-3" alt="FlowBite Logo" />
+                  <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-800">
                     Panda Bagpackers
                   </span>
                 </Link>
               </div>
               <div className="mb-4 flex flex-col xl:flex-row gap-3 justify-between">
-                <h2 class="my-4 ml-4 text-sm font-semibold uppercase text-gray-800">
+                <h2 className="my-4 ml-4 text-sm font-semibold uppercase text-gray-800">
                   Follow us
                 </h2>
                 <div className="flex gap-4">
@@ -278,17 +279,17 @@ const Home = () => {
             </div>
 
             <div className="w-full md:w-3/4 flex justify-between ">
-              <div class=" flex justify-between ">
+              <div className=" flex justify-between ">
                 <div className="grid grid-cols-2">
                   <div className="mx-4 ">
-                    <h2 class="mb-6 text-sm font-semibold uppercase text-gray-800">
+                    <h2 className="mb-6 text-sm font-semibold uppercase text-gray-800">
                       Contact
                     </h2>
-                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
+                    <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <li className="mb-4">
                         <a
                           href="/"
-                          class="hover:underline"
+                          className="hover:underline"
                         >
                           pandas@gmail.com
                         </a>
@@ -302,22 +303,22 @@ const Home = () => {
                   </div>
 
                   <div className=" mx-4">
-                    <h2 class="mb-6 text-sm font-semibold text-gray-800 uppercase ">
+                    <h2 className="mb-6 text-sm font-semibold text-gray-800 uppercase ">
                       Legal
                     </h2>
-                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
-                        <a href="/" class="hover:underline">
+                    <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <li className="mb-4">
+                        <a href="/" className="hover:underline">
                           Privacy Policy
                         </a>
                       </li>
-                      <li class="mb-4">
-                        <a href="/" class="hover:underline">
+                      <li className="mb-4">
+                        <a href="/" className="hover:underline">
                           FAQ
                         </a>
                       </li>
                       <li>
-                        <a href="/" class="hover:underline">
+                        <a href="/" className="hover:underline">
                           Terms &amp; Conditions
                         </a>
                       </li>
@@ -327,11 +328,11 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <div class="sm:flex sm:items-center sm:justify-center">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <div className="sm:flex sm:items-center sm:justify-center">
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2024{" "}
-              <a href="https://github.com/Parth-Gala" class="hover:underline">
+              <a href="https://github.com/Parth-Gala" className="hover:underline">
                 Parth Gala™
               </a>
               . All Rights Reserved.
