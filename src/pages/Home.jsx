@@ -19,6 +19,7 @@ import {
 import { FaHouse } from "react-icons/fa6";
 import CModal from "../components/CModal.js";
 import subscribe from "../assets/subscribe.png";
+import { Link } from "react-router-dom";
 const slides = [
   "https://cdn.discordapp.com/attachments/1088179483858710569/1192567171033870386/Manali.jpg?ex=65a98bba&is=659716ba&hm=11c71a722d5bf923527292eb38830aed3297efd87abae2a41fce2f2adb169195&",
   "https://cdn.discordapp.com/attachments/1088179483858710569/1192567110908510248/Darjeeling.jpg?ex=65a98bac&is=659716ac&hm=962e505fe1ea9044c2756ada272800f5658118ac44b26fd953e0e26ff70f5387&",
@@ -205,12 +206,12 @@ const Home = () => {
           <div class="md:flex md:justify-between">
             <div className="w-full md:w-1/4 mr-20">
               <div class="mb-6 md:mb-10">
-                <a href="/" class="flex items-center">
+                <Link to="/" class="flex items-center">
                   <img src={logo} class="h-10 me-3" alt="FlowBite Logo" />
                   <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-800">
                     Panda Bagpackers
                   </span>
-                </a>
+                </Link>
               </div>
               <div className="mb-4 flex flex-col xl:flex-row gap-3 justify-between">
                 <h2 class="my-4 ml-4 text-sm font-semibold uppercase text-gray-800">

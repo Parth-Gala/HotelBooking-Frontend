@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import logo from "../assets/logo.png";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import CModal from "../components/CModal";
 import wrongdetails from "../assets/wrongdetails.png";
@@ -67,13 +67,12 @@ const Register = () => {
             class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500"
           >
             Already a member?{" "}
-            <a
-              href="/login"
-              class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"
+            <Link
+              to="/login"
+              className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"
             >
-              {" "}
               Sign in here
-            </a>
+            </Link>
           </p>
 
           <div className="mt-6 w-full">
@@ -151,7 +150,6 @@ const Register = () => {
               <select
                 aria-labelledby="goalType"
                 id="goalType"
-                value="Traveller"
                 className="bg-gray-200 border text-gray-700 rounded-md focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-3 pr-10 py-2 sm:text-sm overflow-hidden"
               >
                 <option value="">Your Travelling Type</option>

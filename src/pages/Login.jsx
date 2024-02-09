@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import logo from "../assets/logo.png";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CModal from "../components/CModal";
 import wrongdetails from "../assets/wrongdetails.png";
 import correct from "../assets/correct.png"
@@ -70,13 +70,11 @@ const Login = () => {
             class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500"
           >
             Dont have account?{" "}
-            <a
-              href="/register"
-              className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"
-            >
+
+            <Link to="/register" className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer">
               {" "}
               Sign up here
-            </a>
+            </Link>
           </p>
 
           <div className="mt-6 w-full">
