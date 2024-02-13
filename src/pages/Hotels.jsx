@@ -101,8 +101,8 @@ const Hotels = () => {
   ]);
 
   const showAvailabilityMessage = () => {
-    const enteredDestination = destination.toLowerCase();
-    if (!availableDestinations.includes(enteredDestination)) {
+    // const enteredDestination = destination.toLowerCase();
+    if (!availableDestinations.includes(destination)) {
       return (
         <div className=" text-center">
           <div className=" text-red-600">OOPS!!! So Sorry Dear</div>
@@ -131,7 +131,8 @@ const Hotels = () => {
                   onChange={(e) => setDestination(capitalizeFirstLetter(e.target.value))}
                   className=" rounded-l-full p-2 w-[100%] -mr-1 pl-8 bg-transparent focus:outline-none placeholder:text-black text-black"
                   id="destination"
-                  autoComplete="off"
+                  autoComplete="on"
+                  autoCorrect="on"
                 />
               </div>
               <div className="flex justify-center items-start text-center border rounded-full mb-4 ml-4 bg-designColor p-2 w-10 h-10">
@@ -442,6 +443,8 @@ const Hotels = () => {
                       onChange={(e) => setDestination(capitalizeFirstLetter(e.target.value))}
                       className=" rounded-l-full p-2 w-[100%] -mr-1 pl-8 bg-transparent focus:outline-none placeholder:text-gray-100 text-gray-100"
                       id="destination"
+                      autoComplete="on"
+                      autoCorrect="on"
                     />
                   </div>
 
