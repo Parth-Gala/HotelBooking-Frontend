@@ -22,13 +22,21 @@ import subscribe from "../assets/subscribe.png";
 import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
 
+import manali from "../assets/Manali.jpg";
+import delhi from "../assets/Delhi.jpg";
+import darjeeling from "../assets/Darjeeling.jpg";
+import kerala from "../assets/Kerala.jpg";
+import mumbai from "../assets/Mumbai.jpg";
+import sikkim from "../assets/Sikkim.jpg";
+
 const slides = [
-  "https://cdn.discordapp.com/attachments/1088179483858710569/1192567171033870386/Manali.jpg?ex=65a98bba&is=659716ba&hm=11c71a722d5bf923527292eb38830aed3297efd87abae2a41fce2f2adb169195&",
-  "https://cdn.discordapp.com/attachments/1088179483858710569/1192567110908510248/Darjeeling.jpg?ex=65a98bac&is=659716ac&hm=962e505fe1ea9044c2756ada272800f5658118ac44b26fd953e0e26ff70f5387&",
-  "https://media.discordapp.net/attachments/1088179483858710569/1192567117757821028/Kerala.jpg?ex=65a98bad&is=659716ad&hm=2dd456c078153d557db8cbb4865ede4ee2c991340ac7c0648872f358f4ab5daa&=&format=webp&width=1042&height=586",
-  "https://cdn.discordapp.com/attachments/1088179483858710569/1192567172338307072/Mumbai.jpg?ex=65a98bba&is=659716ba&hm=18fde6e08e5b4b251970508e96581321603e4a585787dec61b982b801a005815&",
-  "https://media.discordapp.net/attachments/1088179483858710569/1192567233407369276/Sikkim.jpg?ex=65a98bc9&is=659716c9&hm=92e96738d7231d86a869c2797de20a8a5465b81a87f07654207bcc227dbb04f9&=&format=webp&width=880&height=586",
-];
+  manali,
+  darjeeling,
+  kerala,
+  mumbai,
+  sikkim,
+ ];
+
 
 // const names = ['Manali', 'Delhi', 'Darjeeling', 'Kerala', 'Sikkim']
 const Home = () => {
