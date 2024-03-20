@@ -21,9 +21,7 @@ import CModal from "../components/CModal.js";
 import subscribe from "../assets/subscribe.png";
 import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
-
 import manali from "../assets/Manali.jpg";
-import delhi from "../assets/Delhi.jpg";
 import darjeeling from "../assets/Darjeeling.jpg";
 import kerala from "../assets/Kerala.jpg";
 import mumbai from "../assets/Mumbai.jpg";
